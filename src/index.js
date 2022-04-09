@@ -6,7 +6,6 @@ const { default: axios } = require("axios");
 dotenv.config();
 
 const app = express();
-const port = 8000;
 
 app.use(cors());
 app.use(express.json());
@@ -61,6 +60,6 @@ app.get('/analyze', (req, res) => {
   })
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 8000, () => {
   console.log(`Listening on port: ${port}`);
 });
